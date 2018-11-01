@@ -7,7 +7,11 @@
 # you're doing.
 Vagrant.configure("2") do |config|
   config.vm.define "instance1" do |instance1|
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.network "private_network", ip: "192.168.1.10"
-
+      instance1.vm.box = "ubuntu/trusty64"
+      instance1.vm.network "private_network", ip: "192.168.1.10"
+  end
+  config.vm.define "instance2" do |instance2|
+      instance2.vm.box = "ubuntu/trusty64"
+      instance2.vm.network "private_network", ip: "192.168.1.20"
+  end
 end
